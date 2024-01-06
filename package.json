@@ -9,13 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.29.1",
+    "@neondatabase/serverless": "^0.6.1",
+    "dotenv": "^16.3.1",
+    "drizzle-kit": "^0.20.10",
+    "drizzle-orm": "^0.29.3",
+    "next": "14.0.4",
+    "pg": "^8.11.3",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.4"
+    "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/react": "18.2.47",
     "autoprefixer": "^10.0.1",
     "postcss": "^8",
-    "tailwindcss": "^3.3.0"
+    "tailwindcss": "^3.3.0",
+    "typescript": "5.3.3"
   }
 }
