@@ -3,9 +3,6 @@ import { PutObjectCommandOutput, S3 } from "@aws-sdk/client-s3";
 export async function uploadToS3(
   file: File
 ): Promise<{ file_key: string; file_name: string }> {
-    console.log("AWS_ACCESS_KEY_ID:", process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID);
-    console.log("AWS_SECRET_KEY:", process.env.NEXT_PUBLIC_AWS_SECRET_KEY);
-    console.log("All environment variables:", process.env);
 
   return new Promise((resolve, reject) => {
     try {
@@ -31,10 +28,6 @@ export async function uploadToS3(
         (err: any, data: PutObjectCommandOutput | undefined) => {
           if (err) {
             console.error("S3 Upload Error:", err);
-            console.log("Complete Error Object:", err); // Log the complete error object
-            console.log("S3 Request Headers:", err.request.headers); // Log request headers
-            console.log("S3 Request Endpoint:", err.request.endpoint); // Log request endpoint
-
             reject(err);
           } else {
             console.log("S3 Upload Success:", data);
