@@ -72,8 +72,10 @@ async function embedDocument(doc: Document) {
 }
 
 export const convertStringToBytes = (str: string, bytes: number) => {
-  const result = new TextEncoder();
-  return new TextDecoder("utf-8").decode(result.encode(str).slice(0, bytes));
+  const enc = new TextEncoder();
+  return new TextDecoder("utf-8").decode(enc.encode(str).slice(0, bytes));
+  // return new TextDecoder("utf-8").decode(enc.encode(str).slice(0, bytes));
+
 };
 
 async function prepareDocument(page: PDFPage) {

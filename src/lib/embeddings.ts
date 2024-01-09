@@ -15,7 +15,7 @@ export async function getEmbeddings(text: string) {
     });
     const result = await response.json();
     // return result.data[0].embedding as number[];
-    if (result && result.data && result.data[0] && result.data[0].embedding) {
+    if (result && result.data) {
       return result.data[0].embedding as number[];
     } else {
       console.log("Expected properties not found in API response:", result);
